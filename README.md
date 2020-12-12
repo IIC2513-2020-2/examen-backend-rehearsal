@@ -1,53 +1,44 @@
-# Template
+# Ensayo examen backend
 
-Template built with [koa](http://koajs.com/) for IIC2513 - Tecnologías y Aplicaciones Web, Pontificia Universidad Católica de Chile.
+Este proyecto fue construido con el template del curso (ya visto por ustedes en el proyecto) y expone una API REST de prueba.
 
-## Prerequisites:
+## Pre-requisitos para correr proyecto:
 * PostgreSQL
-  * you will need a database with name and user/password as configured in `src/config/database.js`
-* Node.js LTS (10.x or 12.x)
+  * Crear una base de datos en PostgreSQL con un nombre (ejemplo, `examen_dev`) y asignarle un user/password válido
+  * Configurar base de datos con nombre y user/password dentro de `src/config/database.js`. Se pueden usar variables de ambiente o modificar directamente el archivo (si les parece más simple)
+  * En caso de utilizar variables de ambiente, especificar tres:
+    * `DB_NAME`
+    * `DB_USERNAME`
+    * `DB_PASSWORD`
+* Node.js LTS (ojalá 12.x, pero también puede ser 10.x)
 * [Yarn](https://yarnpkg.com)
 
-## Project Setup
+## Setup proyecto
 
-* Clone repository
-* Install dependencies:
+* Clonar repositorio
+* (Opcional) Si usan `nvm`, cambiar a versión válida para el proyecto
+  * `nvm use`
+* Instalar dependencias:
   * `yarn install`
+* Correr migraciones
+  * `yarn sequelize db:migrate`
 
-## Database Setup (development)
-
-### Install postgresql
-* On Mac OS X using Homebrew: `brew install postgresql`
-  * Start service: check [LaunchRocket](https://github.com/jimbojsb/launchrocket) or [lunchy](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/) for postgresql service management
-* [Other platforms](https://www.postgresql.org/download/)
-
-### Create development database
+## Ejecutar aplicación
 
 ```sh
-createdb iic2513template_dev
+yarn dev # o yarn start
 ```
 
-### Run migrations
-```sh
-./node_modules/.bin/sequelize db:migrate
-```
+## Probar endpoint
 
-## Run the app!
+Para verificar que todo está bien:
+- Ingresar (por browser, curl, Postman o similar) al endpoint: http://localhost:3000/api
+- El resultado debiese ser un JSON con la siguiente estructura
+  ```json
+  {
+    message: "Bienvenido a la API del examen del curso IIC2513",
+    usersCount: 0
+  }
+  ```
 
-```sh
-yarn start
-```
-
-or directly
-
-```sh
-node index.js
-```
-
-or, if you want automatic restart after any change in your files
-
-```sh
-yarn dev
-```
-
-Now go to http://localhost:3000 and start browsing :)
+¡Listo! Ya estás de condiciones de correr una API con el template del curso. En el examen tendrás que seguir pasos similares, pero con otro repositorio.
