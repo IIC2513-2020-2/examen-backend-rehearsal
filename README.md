@@ -16,6 +16,7 @@ Este proyecto fue construido con el template del curso (ya visto por ustedes en 
 ## Setup proyecto
 
 * Clonar repositorio
+* `cd examen-backend-rehearsal`
 * (Opcional) Si usan `nvm`, cambiar a versión válida para el proyecto
   * `nvm use`
 * Instalar dependencias:
