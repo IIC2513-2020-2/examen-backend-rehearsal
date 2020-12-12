@@ -36,8 +36,8 @@ Para verificar que todo está bien:
 - El resultado debiese ser un JSON con la siguiente estructura
   ```json
   {
-    message: "Bienvenido a la API del examen del curso IIC2513",
-    usersCount: 0
+    "message": "Bienvenido a la API del examen del curso IIC2513",
+    "usersCount": 0
   }
   ```
 
