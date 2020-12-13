@@ -5,11 +5,6 @@ Este proyecto fue construido con el template del curso (ya visto por ustedes en 
 ## Pre-requisitos para correr proyecto:
 * PostgreSQL
   * Crear una base de datos en PostgreSQL con un nombre (ejemplo, `examen_dev`) y asignarle un user/password válido
-  * Configurar base de datos con nombre y user/password dentro de `src/config/database.js`. Se pueden usar variables de ambiente o modificar directamente el archivo (si les parece más simple)
-  * En caso de utilizar variables de ambiente, especificar tres:
-    * `DB_NAME`
-    * `DB_USERNAME`
-    * `DB_PASSWORD`
 * Node.js LTS (ojalá 12.x, pero también puede ser 10.x)
 * [Yarn](https://yarnpkg.com)
 
@@ -21,6 +16,10 @@ Este proyecto fue construido con el template del curso (ya visto por ustedes en 
   * `nvm use`
 * Instalar dependencias:
   * `yarn install`
+* Configurar base de datos con nombre y user/password dentro de `src/config/database.js`. Debes especificar tres variables de ambiente:
+  * `DB_NAME`
+  * `DB_USERNAME`
+  * `DB_PASSWORD`
 * Correr migraciones
   * `yarn sequelize db:migrate`
 
